@@ -21,7 +21,7 @@
     <nav class="container" aria-label="Primary navigation">
       <div>
         <img href="#" class="logo" aria-label="SpaceMatrix home"
-          src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fmain-logo-cp.png&w=256&q=75"
+          src="logo.jpg"
           alt="">
       </div>
       <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
@@ -33,7 +33,7 @@
         </svg>
       </button>
       <ul class="nav-links" id="primary-menu">
-        <li><a href="#">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="#">How we Work</a></li>
         <li><a href="#">Our Work</a></li>
         <li><a href="#">Blogs</a></li>
@@ -52,7 +52,7 @@
       <div class="bg-overlay"></div>
       <div class="container content">
         <img class="hero-img"
-          src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fmain-logo-cp.png&w=256&q=75"
+          src="logo.jpg"
           alt="">
         <h1>Transforming workplaces into positive catalysts</h1>
         <h1 style="padding-top: 50px;">For people to thrive, businesses to grow and collectively protect our planet</h1>
@@ -440,10 +440,6 @@
 
   </main>
 
-  <section>
-
-  </section>
-
   <div class="faq-section text-center">
   <div class="container">
     <h2>Frequently Wondered <span class="text-light">Whys</span></h2>
@@ -590,29 +586,7 @@
       navLinks.classList.toggle('open');
     });
 
-
-    // const counters = document.querySelectorAll('.counter');
-
-    // counters.forEach(counter => {
-    //   const target = +counter.getAttribute('data-target');
-
-    //   const updateCount = () => {
-    //     let count = +counter.innerText.replace('+', '');
-    //     const increment = Math.ceil(target / 100);
-
-    //     if (count < target) {
-    //       counter.innerText = count + increment;
-    //       setTimeout(updateCount, 30);
-    //     } else {
-    //       counter.innerText = target + '+';
-    //     }
-    //   };
-
-    //   updateCount();
-    // });
-
-
-     document.addEventListener("DOMContentLoaded", () => {
+   document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
 
     const startCounting = (counter) => {
