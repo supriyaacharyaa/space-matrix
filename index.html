@@ -62,13 +62,24 @@
 
 
 
-    <section>
-      <div class="container mt-3">
-        <img
-          src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fdiginex-hong-kong-china.jpg&w=1920&q=80"
-          alt="">
-      </div>
-    </section>
+<section class="scroll-image-frame-section mt-4">
+  <div class="image-container1 container">
+    <img
+      src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fdiginex-hong-kong-china.jpg&w=1920&q=80"
+      alt="Diginex Hong Kong Office"
+      class="scroll-image"
+    />
+  </div>
+
+  <div class="white-frame-container">
+    <div class="white-frame">
+      
+    </div>
+  </div>
+</section>
+
+
+
 
     <section class="container text-center my-5">
       <h1>We deliver <span style="color: brown; font-size: xx-large;">impact</span></h1>
@@ -730,10 +741,21 @@ window.addEventListener('scroll', () => {
   });
 
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  const frame = document.querySelector('.white-frame-container');
+  observer.observe(frame);
 
 
-  
-  </script>
+</script>
+
+
 
 </body>
 
