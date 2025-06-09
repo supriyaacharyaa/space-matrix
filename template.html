@@ -1,0 +1,28 @@
+<!-- template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Image Page</title>
+</head>
+<body>
+
+  <h1>This is a shared content page</h1>
+  <img id="main-image" src="" alt="Main" width="400">
+
+  <script>
+    // Get the URL parameter
+    const params = new URLSearchParams(window.location.search);
+    const imgId = params.get("img");
+
+    // Determine which image to show
+    const imageMap = {
+      "1": "https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fcase-studies%2Fbptp-gurgaon%2Fbptp_gurgaon_1x.jpg&w=1080&q=75",
+      "2": "image2.jpg"
+    };
+
+    const imageSrc = imageMap[imgId] || "default.jpg"; // fallback
+    document.getElementById("main-image").src = imageSrc;
+  </script>
+
+</body>
+</html>

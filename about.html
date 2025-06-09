@@ -1,12 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpaceMatrix </title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <body>
+  <header>
+    <nav class="container" aria-label="Primary navigation">
+      <div>
+       <a href="/index.html"> <img href="" class="logo" aria-label="SpaceMatrix home"
+          src="images/logo.jpg"
+          alt=""></a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <ul class="nav-links" id="primary-menu">
+        <li><a href="about.html" class="custom-nav-item nav-link-text">About Us</a></li>
+        <li><a href="what-we-do.html" class="custom-nav-item nav-link-text">What we do</a></li>
+        <li><a href="our-work.html" class="custom-nav-item nav-link-text">Our Work</a></li>
+       <li><a href="contact.html" class="custom-nav-item nav-link-text">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section>
+    <div class="image-container-scroll" id="imageContainer">
+    <img src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fairbnb-beijing-meeting-room-collaboration.jpg&w=1920&q=80" alt="Sample Image">
+    <div class="overlay-text" id="overlayText"> <span>WHO WE ARE</span></div>
+  </div>
+</section >
+
+<!-- <section class='container my-4'>
+  <div class="row ">
+    <div class="col-lg-6">
+   <span class="text text-dark-blue fs-big">At Rythm Design Consultants,</span><h4>we understand the power of workplace design in creating flourishing communities within organisations. The concept of work and the expectations from the workplace have evolved and will continue to evolve. The office whether physical, hybrid or even in the metaverse, will need to create inspiration.
+</h4>
+   </div>
+  </div>
+
+<img class="my-3" src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fabout-us%2Fdior-dorset-house-shanghai-china.jpg&w=1920&q=100" alt="">
+
+  <h4 class="my-3" >Dior Dorset House Shanghai China
+This will no longer be limited to office interior design or designing ‘spaces’ that fulfil ‘employee needs’ but rather centred around designing ‘positive experiences’ to increase communication, promote a sense of togetherness and improve levels of creativity and productivity.
+
+</h4>
+<img class="my-3"  src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fabout-us%2Fthe-coca-cola-company-singapore.jpg&w=1920&q=100" alt="">
+<h4 class="my-3" >
+  Our approach goes beyond traditional office interior design. We believe in crafting the best office interior design solutions through Design Thinking, that focus on workplace strategy and creating positive experiences. By fostering communication, togetherness, and enhancing creativity and productivity, we enable individuals to flourish, communities to thrive, and organisations to succeed.
+</h4>
+</section> -->
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-12 col-lg-6 mb-3">
+      <span class=" text-dark-blue fs-big">At Rythm Design Consultants,</span>
+      <h4>
+        we understand the power of workplace design in creating flourishing communities within organisations.
+        The concept of work and the expectations from the workplace have evolved and will continue to evolve.
+        The office whether physical, hybrid or even in the metaverse, will need to create inspiration.
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <img class="img-fluid my-3 w-100" src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fabout-us%2Fdior-dorset-house-shanghai-china.jpg&w=1920&q=100" alt="">
+    </div>
+    <div class="col-12">
+      <h4 class="my-3">
+        <strong>Dior Dorset House Shanghai China:</strong> This will no longer be limited to office interior design or designing ‘spaces’ that fulfil ‘employee needs’ but rather centred around designing ‘positive experiences’ to increase communication, promote a sense of togetherness and improve levels of creativity and productivity.
+      </h4>
+    </div>
+    <div class="col-12">
+      <img class="img-fluid my-3 w-100" src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fabout-us%2Fthe-coca-cola-company-singapore.jpg&w=1920&q=100" alt="">
+    </div>
+    <div class="col-12 col-lg-6 mb-3">
+      <span class=" text-dark-blue fs-big">Our approach</span>
+      <h4>
+       goes beyond traditional office interior design. We believe in crafting the best office interior design solutions through Design Thinking, that focus on workplace strategy and creating positive experiences. By fostering communication, togetherness, and enhancing creativity and productivity, we enable individuals to flourish, communities to thrive, and organisations to succeed.
+      </h4>
+    </div>
+  </div>
+</section>
+<!-- <section class="container m-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <h4 class="text-dark-blue fs-big">At Rythms, we are</h4>
+    </div>
+    <div class="col-lg-4">
+<div class="frame-1">
+    <div class="text-1">Welcome to Our Site</div>
+    <div class="text-1">Explore Our Work</div>
+    <div class="text-1">Contact Us Today</div>
+  </div>
+    </div>
+    <div class="col-lg-4">
+      <h5>Transforming the workplace into a positive catalyst</h5>
+    </div>
+  </div>
+</section> -->
+
+<section class="container my-5">
+  <div class="row text-center text-md-start align-items-center g-4">
+    <div class="col-12 col-md-4">
+      <h4 class="text-dark-blue fs-big">At Rythms, we are</h4>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="frame-1">
+        <div class="text-1">Change-Makers</div>
+        <div class="text-1">Experience-Makers</div>
+        <div class="text-1">Experimenters</div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <h5>Transforming the workplace into a positive catalyst</h5>
+    </div>
+  </div>
+</section>
+<!-- <section class="container m-4">
+<div class="row">
+  <div class="col-lg-3 m-2">
+<h2 class="text-dark-blue">We Listen</h2>
+<h5>to people to get a holistic perspective</h5>
+  </div>
+    <div class="col-lg-3 m-2">
+<h2 class="text-dark-blue">We Understand</h2>
+<h5>flourishing is a nebulous concept, and understand from people and organisations what it means to them</h5>
+  </div>
+    <div class="col-lg-3 m-2">
+<h2 class="text-dark-blue">We Design</h2>
+<h5>to translate their needs into a solution to #makethingshappen</h5>
+  </div>
+    <div class="col-lg-3 m-2">
+<h2 class="text-dark-blue">We Evolve</h2>
+<h5>people’s experience with the workplace and how they work to #maketheworldabetterplacetowork</h5>
+  </div>
+</div>
+</section> -->
+
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <h2 class="text-dark-blue">We Listen</h2>
+      <h5>to people to get a holistic perspective</h5>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <h2 class="text-dark-blue">We Understand</h2>
+      <h5>flourishing is a nebulous concept, and understand from people and organisations what it means to them</h5>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <h2 class="text-dark-blue">We Design</h2>
+      <h5>to translate their needs into a solution to #makethingshappen</h5>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <h2 class="text-dark-blue">We Evolve</h2>
+      <h5>people’s experience with the workplace and how they work to #maketheworldabetterplacetowork</h5>
+    </div>
+  </div>
+</section>
+<section class="">
+
+</section>
+
+<section class="values-section ">
+  <h2>Our Values</h2>
+  <div class="values-container">
+    <div class="value-item">Teamwork</div>
+    <div class="divider"></div>
+    <div class="value-item">Integrity</div>
+    <div class="divider"></div>
+    <div class="value-item">Excellence</div>
+  </div>
+</section>
+
+
+ <div class="container py-5">
+    <h2 class="text-center mb-5">Our Team</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Team Member 1 -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+        <div class="team-member">
+          <img src="" alt="Team Member 1">
+          <div class="overlay-1">
+            <div class="team-name">Akshay Lakshman</div>
+            <div class="team-role">CEO, India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+        <div class="team-member">
+          <img src="" alt="Team Member 2">
+          <div class="overlay-1">
+            <div class="team-name">Jane Doe</div>
+            <div class="team-role">Project Manager</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more team members as needed -->
+    </div>
+  </div>
+
+
+  <main>
     
+
+
+<section class="container mt-5">
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-md-6 mb-4 text-dark-blue">
+          <ul class="list-unstyled">
+            <li>About Us</li>
+            <li>How We Work</li>
+            <li>Our Work</li>
+            <li>Blogs</li>
+          </ul>
+        </div>
+        <div class="col-md-6 mb-4 text-dark-blue">
+          <ul class="list-unstyled">
+            <li>Subscribe</li>
+            <li>Sustainability</li>
+            <li>Locations</li>
+            <li>News</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (Image) -->
+    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4">
+      <img class="img-fluid p-3" src="images/logo.jpg" alt="Logo">
+    </div>
+  </div>
+</section>
+ <footer>
+    <p>© 2024 SpaceMatrix. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

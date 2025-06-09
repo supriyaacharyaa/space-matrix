@@ -21,7 +21,7 @@
     <nav class="container" aria-label="Primary navigation">
       <div>
         <img href="#" class="logo" aria-label="SpaceMatrix home"
-          src="logo.jpg"
+          src="images/logo.jpg"
           alt="">
       </div>
       <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
@@ -33,13 +33,11 @@
         </svg>
       </button>
       <ul class="nav-links" id="primary-menu">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#">How we Work</a></li>
-        <li><a href="#">Our Work</a></li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Our Works</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="about.html" class="custom-nav-item nav-link-text" data-section="about">About Us</a></li>
+        <!-- <li><a href="#" class=" custom-nav-item nav-link-text" data-section="how-we-work">How we Work</a></li> -->
+        <li><a href="what-we-do.html" class=" custom-nav-item nav-link-text" data-section="what-we-do" >What we do</a></li>
+        <li><a href="our-work.html" class=" custom-nav-item nav-link-text" data-section="our-work">Our Work</a></li>
+        <li><a href="contact.html" class="nav-link-text" data-section="contact">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -51,8 +49,8 @@
     <section class="hero" role="banner" aria-label="SpaceMatrix workspace intelligence banner">
       <div class="bg-overlay"></div>
       <div class="container content">
-        <img class="hero-img"
-          src="logo.jpg"
+       <img class="hero-img"
+          src="images/logo.jpg"
           alt="">
         <h1>Transforming workplaces into positive catalysts</h1>
         <h1 style="padding-top: 50px;">For people to thrive, businesses to grow and collectively protect our planet</h1>
@@ -78,10 +76,7 @@
   </div>
 </section>
 
-
-
-
-    <section class="container text-center my-5">
+    <section class="container text-center my-5" id="about">
       <h1>We deliver <span style="color: brown; font-size: xx-large;">impact</span></h1>
       <div class="row mt-4">
 
@@ -108,7 +103,7 @@
       </div>
     </section>
 
-<section class="container mt-5">
+<section class="container mt-5" id="how-we-work">
   <div class="row align-items-center">
 
     <!-- Left Side: Text + Button -->
@@ -203,10 +198,10 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="my-4 col-12 col-sm-6 col-lg-3">
+    <div class="my-4 col-12 col-sm-6 col-lg-3 " id="our-work">
       <div class="card custom-card">
         <div class="image-container">
-        <img src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fcase-studies%2Fbptp-gurgaon%2Fbptp_gurgaon_1x.jpg&w=1080&q=75" class="card-img-top" alt="Nestlé Gurgaon">
+       <a href="template.html?img=1"> <img src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fcase-studies%2Fbptp-gurgaon%2Fbptp_gurgaon_1x.jpg&w=1080&q=75" class="card-img-top" alt="Nestlé Gurgaon"></a>
         </div>
         <div class="card-body">
           <div class="text-outline-box">BPTP
@@ -550,7 +545,7 @@
   </div>
 </div>
 
-<section class="container mt-5">
+<!-- <section class="container mt-5">
 <div class="row">
   <div class="col-lg-8">
     <div class="row">
@@ -577,186 +572,49 @@
   <div class="col-lg-4">
 
 
-    <img class="w-100 p-3 align-items-center" src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fsm-footer-logo-cp.png&w=750&q=75" alt="">
+    <img class="w-100 p-3 align-items-center" src="logo.jpg" alt="">
   </div>
 </div>
 </section>
 
   <footer>
     <p>© 2024 SpaceMatrix. All rights reserved.</p>
+  </footer> -->
+
+  <section class="container mt-5">
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-md-6 mb-4 text-dark-blue">
+          <ul class="list-unstyled">
+            <li>About Us</li>
+            <li>How We Work</li>
+            <li>Our Work</li>
+            <li>Blogs</li>
+          </ul>
+        </div>
+        <div class="col-md-6 mb-4 text-dark-blue">
+          <ul class="list-unstyled">
+            <li>Subscribe</li>
+            <li>Sustainability</li>
+            <li>Locations</li>
+            <li>News</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (Image) -->
+    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4">
+      <img class="img-fluid p-3" src="images/logo.jpg" alt="Logo">
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2024 Rythm Ventures. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Toggle mobile menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('open');
-    });
-
-   document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".counter");
-
-    const startCounting = (counter) => {
-      const target = +counter.getAttribute("data-target");
-      let count = 0;
-      const increment = Math.ceil(target / 100);
-
-      const updateCount = () => {
-        if (count < target) {
-          count += increment;
-          counter.innerText = count;
-          setTimeout(updateCount, 30);
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
-
-      // Reset to 0 every time it's about to animate again
-      counter.innerText = "0";
-      updateCount();
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startCounting(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
-  });
-
-       const text = document.getElementById('overlayText');
-    const imageContainer = document.getElementById('imageContainer');
-
-    window.addEventListener('scroll', () => {
-      const rect = imageContainer.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Only animate when image is in view
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        const imageMiddle = rect.top + rect.height / 2;
-        const scrollProgress = 1 - (imageMiddle / windowHeight); // 0 to 1
-
-        // Clamp scrollProgress between 0 and 1
-        const clamped = Math.max(0, Math.min(scrollProgress, 1));
-
-        // Map progress from 100% (below) to -50% (centered vertically)
-        const translateY = 100 - 150 * clamped;
-
-        text.style.transform = `translate(-50%, ${translateY}%)`;
-      }
-    });
-
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-
-     var swiper1 = new Swiper(".mySwiper1", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-
-
-const heroWrapper = document.querySelector('.hero-wrapper');
-const hero = document.querySelector('.hero');
-const overlay = document.querySelector('.bg-overlay');
-const container = document.querySelector('.hero .container');
-
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const wrapperTop = heroWrapper.offsetTop;
-  const wrapperHeight = heroWrapper.offsetHeight;
-
-  const progress = Math.min(Math.max((scrollTop - wrapperTop) / (wrapperHeight - window.innerHeight), 0), 1);
-
-  // Expand overlay width from 0% to 100%
-  overlay.style.width = `${progress * 100}%`;
-
-  // Interpolate text color from black to white
-  const text = Math.floor(0 + progress * 255);
-  container.style.color = `rgb(${text}, ${text}, ${text})`;
-});
-
-
-  const animatedText = document.getElementById('animatedText');
-  const scrollSection = document.getElementById('scrollSection');
-
-  window.addEventListener('scroll', () => {
-    const sectionRect = scrollSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-      const sectionMiddle = sectionRect.top + sectionRect.height / 2;
-      const scrollProgress = 1 - (sectionMiddle / windowHeight);
-
-      const clampedProgress = Math.max(0, Math.min(scrollProgress, 1));
-      const translateY = 100 - 150 * clampedProgress;
-
-      animatedText.style.transform = `translate(-50%, ${translateY}%)`;
-    }
-  });
-
-
- 
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const section = document.querySelector(".fade-section");
-    const fadeText = section.querySelector(".fade-text");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          section.classList.add("active");
-
-          fadeText.classList.remove("animate");
-          void fadeText.offsetWidth; // reflow trick
-          fadeText.classList.add("animate");
-        } else {
-          section.classList.remove("active");
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(section);
-  });
-
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-
-  const frame = document.querySelector('.white-frame-container');
-  observer.observe(frame);
-
-
-</script>
-
-
-
+  <script src="script.js"></script>
 </body>
-
 </html>
