@@ -1210,3 +1210,33 @@ body {
 label {
   font-weight: 500;
 }
+
+
+
+
+
+
+
+/* up */
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  width: 50px;             /* Set size */
+  height: 50px;
+  border: none;
+  border-radius: 50%;      /* Makes it a perfect circle */
+  background-color: #003366;
+  padding: 0;
+  overflow: hidden;        /* Ensures image stays within the circle */
+  display: none;           /* Show only when scrolling */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  color: white;
+}
+#backToTopBtn:hover {
+  background-color: #005199;
+}
+
