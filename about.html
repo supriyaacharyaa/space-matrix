@@ -17,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <body>
-  <header>
+  <header id="mainHeader" class="header">
     <nav class="container" aria-label="Primary navigation">
       <div>
        <a href="index.html"> <img  class="logo" aria-label="SpaceMatrix home"
@@ -41,7 +41,7 @@
     </nav>
   </header>
 
-<section>
+<section id="imageSection">
     <div class="image-container-scroll" id="imageContainer">
     <img src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fairbnb-beijing-meeting-room-collaboration.jpg&w=1920&q=80" alt="Sample Image">
     <div class="overlay-text" id="overlayText"> <span>WHO WE ARE</span></div>
@@ -198,7 +198,7 @@ This will no longer be limited to office interior design or designing â€˜spacesâ
       <!-- Team Member 1 -->
       <div class="col-lg-3 col-md-4 col-sm-6 col-10">
         <div class="team-member">
-          <img src="" alt="Team Member 1">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgHaLH?rs=1&pid=ImgDetMain" alt="Team Member 1">
           <div class="overlay-1">
             <div class="team-name">Akshay Lakshman</div>
             <div class="team-role">CEO, India</div>
@@ -209,7 +209,7 @@ This will no longer be limited to office interior design or designing â€˜spacesâ
       <!-- Team Member 2 -->
       <div class="col-lg-3 col-md-4 col-sm-6 col-10">
         <div class="team-member">
-          <img src="" alt="Team Member 2">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgHaLH?rs=1&pid=ImgDetMain" alt="Team Member 2">
           <div class="overlay-1">
             <div class="team-name">Jane Doe</div>
             <div class="team-role">Project Manager</div>
@@ -257,7 +257,8 @@ This will no longer be limited to office interior design or designing â€˜spacesâ
   </div>
 </section>
  <footer>
-    <p>Â© 2024 SpaceMatrix. All rights reserved.</p>
+   <p id="copyright-text">Â© <span id="year"></span> Rythm Ventures. All rights reserved.</p>
+
   </footer>
 
    <!-- Back to Top Button -->

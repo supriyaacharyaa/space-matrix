@@ -273,3 +273,30 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  //copyright
+  document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
+
+
+//about photo
+window.addEventListener("scroll", function () {
+  const header1 = document.getElementById("mainHeader");
+  const imageSection = document.getElementById("imageSection");
+
+  const sectionTop = imageSection.offsetTop;
+  const sectionHeight = imageSection.offsetHeight;
+  const sectionBottom = sectionTop + sectionHeight;
+
+  const scrollY = window.scrollY + 100; // tweak offset if needed
+
+  if (scrollY > sectionTop && scrollY < sectionBottom) {
+    header1.classList.add("transparent1");
+  } else {
+    header1.classList.remove("transparent1");
+  }
+});

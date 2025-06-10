@@ -1289,3 +1289,12 @@ label {
   background-color: #005199;
 }
 
+/* Transparent header when scrolling over image */
+.transparent1 {
+  background-color: transparent;
+ 
+}
+
+.transparent a {
+  color: white;
+}
