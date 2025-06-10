@@ -2,6 +2,7 @@
     // Toggle mobile menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    
 
     menuToggle.addEventListener('click', () => {
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
@@ -108,6 +109,45 @@ window.addEventListener('scroll', () => {
   container.style.color = `rgb(${text}, ${text}, ${text})`;
 });
 
+const header = document.querySelector("header");
+const navLink = document.querySelectorAll('.nav-link-text');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const wrapperTop = heroWrapper.offsetTop;
+  const wrapperHeight = heroWrapper.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const wrapperEnd = wrapperTop + wrapperHeight;
+
+  // Calculate progress of scrolling through hero-wrapper
+  const progress = Math.min(Math.max((scrollTop - wrapperTop) / (wrapperHeight - windowHeight), 0), 1);
+
+  // 1. Before hero-wrapper starts
+  if (scrollTop < wrapperTop) {
+    header.style.backgroundColor = 'white';
+    navLink.forEach(link => link.style.color = 'black');
+  }
+
+  // 2. While inside hero-wrapper
+  else if (scrollTop >= wrapperTop && scrollTop < wrapperEnd) {
+    header.style.backgroundColor = 'transparent';
+
+    if (progress <= 0.61) {
+      navLink.forEach(link => link.style.color = 'gray');
+    } else {
+      navLink.forEach(link => link.style.color = 'white');
+    }
+
+    // Update overlay animation
+    overlay.style.width = `${progress * 100}%`;
+  }
+
+  // 3. After hero-wrapper ends
+  else {
+    header.style.backgroundColor = 'white';
+    navLink.forEach(link => link.style.color = 'black');
+  }
+});
 
   const animatedText = document.getElementById('animatedText');
   const scrollSection = document.getElementById('scrollSection');
@@ -190,21 +230,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//for our work
+// function updateCardBodyClass() {
+//   const elements = document.querySelectorAll('.card-body');
+//   if (!elements.length) return; // Exit if no such elements
+
+//   elements.forEach(el => {
+//     if (window.innerWidth > 600) {
+//       el.classList.remove('card-body');
+//     } else {
+//       if (!el.classList.contains('card-body')) {
+//         el.classList.add('card-body');
+//       }
+//     }
+//   });
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   updateCardBodyClass();
+//   window.addEventListener("resize", updateCardBodyClass);
+// });
+
 
 //BacktoUp
- const btn = document.getElementById("backToTopBtn");
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("backToTopBtn");
 
-  window.onscroll = () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
+    if (!btn) return; // Prevent error if button not found
 
-  btn.onclick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
     });
-  };
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  });
