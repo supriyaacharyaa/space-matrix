@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bootstrap Scroll Transition</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      position: relative;
+      width: 100%;
+      height: 200vh; /* enough scroll space */
+      background-color: #000;
+    }
+
+    .content {
+      position:fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      transform: translateX(0%);
+      transition: transform 0.1s linear;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateX(100vw);
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 60%;
+      z-index: 2;
+      transition: transform 0.1s linear;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section" id="section">
+    <div class="content container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-12 image-container" id="imageContainer">
+          <img src="https://www.spacematrix.com/_next/image?url=https%3A%2F%2Fcontent.spacematrix.com%2Fmain%2Fabout-us%2Fdior-dorset-house-shanghai-china.jpg&w=1920&q=100" alt="">
+        </div>
+        <div class="col-12 text-container" id="textContainer">
+          <h4>
+            <strong>Dior Dorset House Shanghai China:</strong> This will no longer be limited to office interior design or designing ‘spaces’ that fulfil ‘employee needs’ but rather centred around designing ‘positive experiences’ to increase communication, promote a sense of togetherness and improve levels of creativity and productivity.
+          </h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script>
+    const section = document.getElementById('section');
+    const image = document.querySelector('.image-container img');
+    const text = document.getElementById('textContainer');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const start = sectionTop;
+      const end = sectionTop + sectionHeight - windowHeight;
+      let progress = (scrollY - start) / (end - start);
+      progress = Math.max(0, Math.min(progress, 1)); // Clamp 0 to 1
+
+      // Move image fully off screen
+      image.style.transform = `translateX(${-100 * progress}%)`;
+
+      // Move text fully into view
+      text.style.transform = `translate(-50%, -50%) translateX(${(1 - progress) * 100}vw)`;
+    });
+ 
+
+ </script>
+
+</body>
+</html>

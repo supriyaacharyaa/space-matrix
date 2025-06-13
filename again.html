@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  body, html {
+  margin: 0; padding: 0; overflow-x: hidden;
+  font-family: sans-serif;
+  height: 400vh; /* enough scroll */
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  position: relative;
+  background: #444;
+}
+
+#panel1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: crimson;
+  z-index: 10;
+}
+
+.fixed-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: darkslateblue;
+  z-index: 5;
+}
+
+.horizontal-scroll {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #222;
+}
+
+.horizontal-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 200vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.horizontal-wrapper .panel {
+  flex: 0 0 100vw;
+  background: teal;
+  border-right: 2px solid white;
+  color: white;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+</style>
+</head>
+<body>
+  <!-- Step 1: Panel 1 moves left -->
+  <div id="panel1-container" class="sticky-container">
+    <section id="panel1" class="panel">Panel 1</section>
+    <section id="panel2" class="panel fixed-panel">Panel 2</section>
+  </div>
+
+  <!-- Step 2: Panels 3 & 4 scroll horizontally -->
+  <div id="horizontal-scroll-2" class="horizontal-scroll">
+    <div class="horizontal-wrapper">
+      <section class="panel">Panel 3</section>
+      <section class="panel">Panel 4</section>
+    </div>
+  </div>
+  <script>const panel1 = document.getElementById('panel1');
+const panel2 = document.getElementById('panel2');
+const hScroll2 = document.getElementById('horizontal-scroll-2');
+const hWrapper2 = hScroll2.querySelector('.horizontal-wrapper');
+
+const vh = window.innerHeight;
+
+// total scroll length to move panel1 fully left (100vw)
+const panel1ScrollLength = vh * 1; 
+
+// total scroll length for horizontal scroll (panels 3 & 4)
+const horizontalScrollLength = vh * 2;
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  // Move panel1 left by -100vw over panel1ScrollLength
+  if (scrollY <= panel1ScrollLength) {
+    const progress = scrollY / panel1ScrollLength;
+    const translateX = progress * 100; // vw units
+    panel1.style.transform = `translateX(-${translateX}vw)`;
+    panel2.style.position = 'fixed'; // Keep panel2 fixed on screen
+    hScroll2.style.position = 'relative';
+    hWrapper2.style.transform = `translateX(0)`;
+  } 
+  // After panel1 moved off, allow normal scroll to panels 3 & 4 horizontal scroll
+  else if (scrollY > panel1ScrollLength && scrollY <= panel1ScrollLength + horizontalScrollLength) {
+    const scrollPast = scrollY - panel1ScrollLength;
+    const progress = scrollPast / horizontalScrollLength;
+    const translateX = progress * 100;
+
+    panel2.style.position = 'relative'; // panel2 scrolls normally now
+    panel1.style.transform = `translateX(-100vw)`; // keep panel1 off screen
+
+    hScroll2.style.position = 'sticky';
+    hScroll2.style.top = '0';
+    hWrapper2.style.transform = `translateX(-${translateX}vw)`;
+  }
+});
+</script>
+</body>
+
+
+</html>

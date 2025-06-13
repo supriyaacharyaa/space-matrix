@@ -250,7 +250,7 @@ justify-content: space-between;
   text-align: center;
 }
     .image-container-scroll {
-      position: relative;
+      position: sticky;
       width: 100%;
       height: 100vh; /* Full screen image for better effect */
       overflow: hidden;
@@ -1246,6 +1246,7 @@ body {
 
 
 
+
 /* contact us */
 .contact-section {
   background: linear-gradient(135deg, #ffffff, #f0f2f5);
@@ -1271,7 +1272,7 @@ label {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 999;
+  z-index: 9999;
   width: 50px;             /* Set size */
   height: 50px;
   border: none;
@@ -1290,11 +1291,90 @@ label {
 }
 
 /* Transparent header when scrolling over image */
-.transparent1 {
-  background-color: transparent;
- 
+.transparent-bg-1 {
+  background-color: transparent !important;
+  transition: background-color 0.3s ease;
 }
 
-.transparent a {
+
+
+/* template */
+.section-c {
+  position: relative;
+  height: 200vh; /* Give enough vertical scroll space */
+  overflow: hidden;
+}
+
+.image-container-c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.image-container-c img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container-c {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  width: 50vw;
+  z-index: 2;
   color: white;
+  text-align: left;
+  padding: 20px;
+  transition: transform 0.2s ease-out;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+  @media (max-width: 768px) {
+    .text-container-c {
+      
+      padding: 15px 20px;
+      font-size: 1rem;
+      top: 70%;
+    }
+  }
+  @media (max-width: 480px) {
+    .text-container-c {
+      max-width: 90vw;
+      padding: 12px 15px;
+      font-size: 0.95rem;
+      top: 75%;
+    }
+  }
+
+  /* icon */
+  .social-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-5px);
+}
+.cta-section{
+  background: #003366;
 }
