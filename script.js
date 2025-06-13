@@ -233,3 +233,59 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
+//---------Scroll Template----------
+document.querySelectorAll('.horizontal-section').forEach(section => {
+  const content = section.querySelector('.scroll-content');
+  const contentWidth = content.scrollWidth;
+  const viewportWidth = window.innerWidth;
+
+  // Set section height proportional to how much we need to scroll
+  section.style.height = (contentWidth - viewportWidth + window.innerHeight) + 'px';
+
+  // Attach scroll event
+  window.addEventListener('scroll', () => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 0 && rect.bottom >= 0) {
+      const scrollProgress = Math.min(-rect.top / (section.offsetHeight - window.innerHeight), 1);
+      content.style.transform = `translateX(-${scrollProgress * (contentWidth - viewportWidth)}px)`;
+    }
+  });
+});
+
+//------Scroll-Responsive----
+function setupHorizontalScroll() {
+  document.querySelectorAll('.horizontal-section').forEach(section => {
+    const content = section.querySelector('.scroll-content');
+    const panels = content.querySelectorAll('.panel');
+    const viewportWidth = window.innerWidth;
+
+    const totalWidth = panels.length * viewportWidth;
+    content.style.width = totalWidth + 'px';
+
+    let scrollHeight;
+    if (viewportWidth < 768) {
+      scrollHeight = totalWidth - viewportWidth + window.innerHeight;
+    } else {
+      scrollHeight = window.innerHeight * 2;  // adjust this multiplier to your liking
+    }
+
+    section.style.height = scrollHeight + 'px';
+
+    window.addEventListener('scroll', () => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 0 && rect.bottom >= 0) {
+        const progress = Math.min(-rect.top / (section.offsetHeight - window.innerHeight), 1);
+        content.style.transform = `translateX(-${progress * (totalWidth - viewportWidth)}px)`;
+      }
+    });
+  });
+}
+
+// Initial setup
+setupHorizontalScroll();
+
+// Optional: Recalculate on window resize
+window.addEventListener('resize', () => {
+  setupHorizontalScroll();
+});

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Horizontal Scroll Panels</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html, body {width: 100%; height: 100%; font-family: Arial, sans-serif; }
+    
+    .horizontal-section {
+      position: relative;
+      width: 100%;
+      height: 200vh; /* because we're scrolling vertically for horizontal effect */
+    }
+    .sticky-container {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .scroll-content {
+      display: flex;
+      width: 200vw;
+      height: 100%;
+      transition: transform 0.1s ease-out;
+    }
+    .panel {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+    }
+    .panel.image {
+      background-size: cover;
+      background-position: center;
+    }
+    .panel.text {
+         padding: 10vh 5vw 5vw 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed from center to flex-start */
+  
+  text-align: center;
+  padding: 5vw 5vw 5vw 5vw; /* padding top, right, bottom, left */
+  overflow-y: auto;
+  height: 100vh; /* keep full viewport height */
+  box-sizing: border-box;
+}
+.panel.text {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+    .panel.text h2 {
+      font-size: 3vw;
+      margin-bottom: 2vh;
+    }
+    .panel.text p {
+      font-size: 1.5vw;
+      max-width: 800px;
+    }
+     .panel.text > div {
+    max-width: 800px;
+      margin-top: 10vh;
+
+  }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .panel.text h2 { font-size: 6vw; }
+      .panel.text p { font-size: 4vw; }
+    }
+    @media (max-width: 480px) {
+      .panel.text h2 { font-size: 8vw; }
+      .panel.text p { font-size: 5vw; }
+    }
+  </style>
+</head>
+<body>
+
+      <!-- Section 1 -->
+  <div class="horizontal-section" id="section1">
+    <div class="sticky-container">
+      <div class="scroll-content">
+        <div class="panel image" style="background-image: url('https://picsum.photos/id/1016/1920/1080');"></div>
+        <div class="panel text">
+          <div>
+              <h1 class="text-dark-blue">The Challange</h1> 
+    <p>When BPTP first envisioned its Experience Center within the iconic Oberoi Gurgaon, the intent was bold and clear: to design a space where potential clients could be immersed in the lifestyle, design sensibility, and premium promise that define every BPTP project. Far from a conventional showroom or sales gallery, their goal was to</p>
+    <h4>craft a sensorial, immersive environment that would captivate the senses, spark inspiration, and forge a deep, lasting emotional connection with every visitor</h4>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="horizontal-section" id="section2">
+    <div class="sticky-container">
+      <div class="scroll-content">
+        <div class="panel image" style="background-image: url('https://picsum.photos/id/1015/1920/1080');"></div>
+        <div class="panel text">
+          <div>
+              <h1 class="text-dark-blue">The Solution</h1>
+    <p>Our journey began with deep collaboration. Together with the Embassy’s leadership, we reimagined the office not just as a place to work, but as a multi-layered experience, where every element would tell a story and every floor would play a distinct role in that story.</p>
+    <span>A Space Designed Around Dualities: Focus and Hospitality</span>
+    <p>We started with clear zoning strategies — each floor with a distinct purpose, yet united in design language.</p>
+    <span>The 14th floor was imagined as the client experience zone</span>
+    <p> a refined, elevated space that echoed the ethos of Embassy’s developments. Here, plush textures, bespoke furniture, curated lighting, and art installations created an ambience of quiet opulence. The space invited conversation, confidence, and calm — qualities vital to high-stakes business interactions.</p>
+    <span>The 12th floor embraced a people-first mindset.</span>
+    <p>It housed the cafeteria and open work areas, but more importantly, it celebrated employee wellness through thoughtful interventions — vibrant breakouts, natural light access, acoustic balance, and ergonomic variety. This floor wasn’t just functional. It was empowering.</p>
+    <p>And threading the two together — quite literally — was a bold feature staircase, a visual and experiential statement. Designed not just for movement but meaning, it linked clients and employees, vision and execution, ground and sky. A custom mural of Embassy Manyata Business Park — one of their most iconic projects — rose alongside it, serving as a proud reminder of where the brand has been, and where it's going.</p>
+    
+
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Section 3 -->
+  <div class="horizontal-section" id="section3">
+    <div class="sticky-container">
+      <div class="scroll-content">
+        <div class="panel image" style="background-image: url('https://picsum.photos/id/1025/1920/1080');"></div>
+        <div class="panel text">
+          <div>
+            <h1 class="text-dark-blue">The Result</h1> 
+    <p>The BPTP Experience Center isn’t just a place to showcase projects. It’s a space that resonates. One that tells the brand’s story not through presentations but through atmosphere. Through light, material, layout, and detail. Through moments of awe, comfort, and connection.</p>
+    <p>It has a powerful tool of engagement — a place where clients don’t just see the brand; they feel its promise, understand its vision, and trust in its future.In every sense, the Experience Center delivers on the intent that started it all — to create a space that sells without selling and leaves behind not just information but impression.
+
+</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function attachScrollEffect(sectionId) {
+      const section = document.getElementById(sectionId);
+      const content = section.querySelector('.scroll-content');
+      const sectionHeight = section.offsetHeight - window.innerHeight;
+
+      window.addEventListener('scroll', () => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 0 && rect.bottom >= 0) {
+          const scrollProgress = Math.min(-rect.top / sectionHeight, 1);
+          content.style.transform = `translateX(-${scrollProgress * 100}vw)`;
+        }
+      });
+    }
+
+    ['section1', 'section2', 'section3'].forEach(attachScrollEffect);
+  </script>
+
+</body>
+</html>
