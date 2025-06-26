@@ -116,7 +116,7 @@ if (heroWrapper && overlay && container && header && navLink.length > 0) {
       header.style.backgroundColor = 'transparent';
 
       // Change nav link color after ~60% scroll
-      if (progress <= 0.61) {
+      if (progress <= 0.93) {
         navLink.forEach(link => link.style.color = 'gray');
       } else {
         navLink.forEach(link => link.style.color = 'white');
@@ -289,3 +289,34 @@ setupHorizontalScroll();
 window.addEventListener('resize', () => {
   setupHorizontalScroll();
 });
+
+
+
+//language translate
+ document.getElementById('translateBtn').addEventListener('click', function () {
+      const textToTranslate = document.getElementById('text').innerText;
+
+      fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
+        method: 'POST',
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+          "Accept-Encoding": "application/gzip",
+          "X-RapidAPI-Key": "7704573ef1msh576325e944e8f19p1de3c2jsn2358becd2b20",  // <-- paste your key here
+          "X-RapidAPI-Host": "google-translate1.p.rapidapi.com"
+        },
+        body: new URLSearchParams({
+          q: textToTranslate,
+          target: 'hi',
+          source: 'en'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        document.getElementById('text').innerText = data.data.translations[0].translatedText;
+      })
+      .catch(error => {
+        console.error('Translation failed:', error);
+        alert("Translation failed.");
+      });
+    });
